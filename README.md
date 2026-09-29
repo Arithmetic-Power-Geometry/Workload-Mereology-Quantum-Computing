@@ -70,6 +70,6 @@ The current reproducible benchmark includes commuting Pauli-ZZ and generic nonco
 
 `J_lambda(F) = S_hat_OQM(F) + lambda C_hat_T(F)`,
 
-the noncommuting n=10 experiment selected a strict compromise factorization in 168/300 instances (56.0%) at lambda=1 (seed 2029). The physical and task-only optima differed in 99.0% of those instances. See `results/NONCOMMUTING_FINDINGS.md`.
+the noncommuting n=10 experiment selected a strict compromise factorization in 177/300 instances (59.0%) at lambda=1 (seed 2029). The physical and task-only optima differed in 99.0% of those instances. See `results/NONCOMMUTING_FINDINGS.md`.
 
 The result is a finite-size computational finding about workload-dependent subsystem selection. It is not a claim of quantum speedup, a new law of quantum mechanics, or a complexity-class separation.
