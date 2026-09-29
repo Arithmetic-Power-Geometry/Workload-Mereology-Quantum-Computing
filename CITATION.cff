@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or its reproducibility artifacts, please cite this repository release."
+title: "Workload–Mereology Quantum Computing"
+type: software
+authors:
+  - family-names: "Akhtar"
+    given-names: "Mohammad Amir Khusru"
+version: 1.0.0
+date-released: 2026-09-29
+repository-code: "https://github.com/Arithmetic-Power-Geometry/Workload-Mereology-Quantum-Computing"
+license: Apache-2.0
+abstract: >-
+  Theory and reproducible simulations of workload-dependent quantum subsystem
+  selection, combining Operational Quantum Mereology scrambling cost with
+  computational workload cost and lower-convex-envelope selection theory.
+keywords:
+  - quantum mereology
+  - quantum computing
+  - tensor-product structure
+  - scrambling
+  - workload-aware computation
+  - reproducibility
