@@ -35,7 +35,7 @@ The largest observed compromise fraction is:
 
 Thus 177 of 300 instances selected a factorization equal to neither endpoint optimum.
 
-A Wilson 95% confidence interval for 168/300 is approximately [0.534, 0.644].
+A Wilson 95% confidence interval for 177/300 is approximately [0.534, 0.644].
 
 ## Interpretation
 
