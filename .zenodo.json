@@ -1,0 +1,21 @@
+{
+  "title": "Workload–Mereology Quantum Computing",
+  "upload_type": "software",
+  "description": "Theory and reproducible simulations of workload-dependent quantum subsystem selection. The framework combines Operational Quantum Mereology scrambling cost with computational workload cost, derives a lower-convex-envelope selection criterion, and validates strict compromise factorizations in commuting and generic noncommuting two-body Pauli Hamiltonian ensembles.",
+  "creators": [
+    {
+      "name": "Akhtar, Mohammad Amir Khusru"
+    }
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-09-29",
+  "license": "Apache-2.0",
+  "keywords": [
+    "quantum mereology",
+    "quantum computing",
+    "tensor-product structure",
+    "quantum scrambling",
+    "workload-aware computation",
+    "reproducibility"
+  ]
+}
