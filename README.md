@@ -62,3 +62,14 @@ GitHub Actions runs the tests and publishes the generated result bundle as a wor
 Apache License 2.0.
 
 Copyright © 2026 Mohammad Amir Khusru Akhtar.
+
+
+## Current validated result
+
+The current reproducible benchmark includes commuting Pauli-ZZ and generic noncommuting anisotropic XX+YY+ZZ Hamiltonian ensembles. Under the dimensionless objective
+
+`J_lambda(F) = S_hat_OQM(F) + lambda C_hat_T(F)`,
+
+the noncommuting n=10 experiment selected a strict compromise factorization in 168/300 instances (56.0%) at lambda=1 (seed 2029). The physical and task-only optima differed in 99.0% of those instances. See `results/NONCOMMUTING_FINDINGS.md`.
+
+The result is a finite-size computational finding about workload-dependent subsystem selection. It is not a claim of quantum speedup, a new law of quantum mechanics, or a complexity-class separation.
