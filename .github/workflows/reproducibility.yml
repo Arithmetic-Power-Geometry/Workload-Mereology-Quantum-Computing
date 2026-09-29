@@ -45,6 +45,9 @@ jobs:
       - name: Generate OQM independent controls
         run: python scripts/run_oqm_controls.py --out artifacts --samples 300 --seed 2027
 
+      - name: Generate dimensionless OQM controls
+        run: python scripts/run_dimensionless_controls.py --out artifacts --samples 300 --seed 2028
+
       - name: Upload artifact bundle
         uses: actions/upload-artifact@v4
         with:
