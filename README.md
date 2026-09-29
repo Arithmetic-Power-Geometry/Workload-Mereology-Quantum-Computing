@@ -73,3 +73,10 @@ The current reproducible benchmark includes commuting Pauli-ZZ and generic nonco
 the noncommuting n=10 experiment selected a strict compromise factorization in 177/300 instances (59.0%) at lambda=1 (seed 2029). The physical and task-only optima differed in 99.0% of those instances. See `results/NONCOMMUTING_FINDINGS.md`.
 
 The result is a finite-size computational finding about workload-dependent subsystem selection. It is not a claim of quantum speedup, a new law of quantum mechanics, or a complexity-class separation.
+
+
+## Reproducible benchmark summary
+
+Under the dimensionless OQM objective, the n=10 Pauli-ZZ control at lambda=1 selects a strict compromise factorization in 61.33% of 300 instances for uniform and lognormal coupling ensembles and 60.67% for the normal ensemble. In the generic noncommuting anisotropic XX+YY+ZZ control, the strict-compromise fraction at lambda=1 is 21.33% for n=6, 41.33% for n=8, and 59.00% for n=10.
+
+These are finite-size reproducibility results from fixed-seed workflow artifacts. They do not establish an asymptotic scaling law, quantum speedup, or new quantum mechanics.
