@@ -92,3 +92,48 @@ The framework loses distinctiveness if the joint workload-plus-mereology objecti
 No claim is made of a new law of quantum mechanics, a new qubit, computation beyond BQP, inherent quantum speedup, novelty of generalized tensor-product structures, novelty of mereological phase transitions, or novelty of routing/code switching.
 
 Current research claim: **quantum subsystem naturalness and workload utility can be studied in explicit competition through a joint cost functional.**
+
+
+## Lower-envelope theorem for workload–mereology selection
+
+For a finite candidate family \(\mathcal F\), associate each factorization \(F\) with
+
+\[
+P_F=(C_F,S_F),
+\]
+
+where \(C_F\) is normalized task cost and \(S_F\) is normalized physical/OQM scrambling cost. For \(\lambda>0\), define
+
+\[
+J_\lambda(F)=S_F+\lambda C_F.
+\]
+
+### Theorem (exposed-factorization criterion)
+
+A factorization \(F\) is the unique minimizer of \(J_\lambda\) for some \(\lambda>0\) if and only if \(P_F\) is an exposed point of the lower convex hull of \(\{P_G:G\in\mathcal F\}\) with a supporting line of negative slope.
+
+Proof. Minimizing \(S+\lambda C\) is minimizing the linear functional \(\langle(\lambda,1),(C,S)\rangle\). A point is the unique minimizer of a linear functional exactly when it is exposed by the corresponding supporting line. Since \(\lambda>0\), the supporting line \(S+\lambda C=k\) has slope \(-\lambda<0\). Conversely, any lower-hull exposed point with negative-slope supporting line supplies a positive \(\lambda\) for which that factorization uniquely minimizes the objective. \(\square\)
+
+### Corollary (genuine compromise interval)
+
+Let \(F_P\) minimize physical cost and \(F_T\) minimize task cost. A third factorization \(F_C\notin\{F_P,F_T\}\) is optimal on a nonempty open interval of workload pressures if its point is a strict intermediate vertex of the lower convex hull.
+
+For three hull vertices ordered by decreasing task cost,
+\[
+P_P=(C_P,S_P),\quad P_C=(C_C,S_C),\quad P_T=(C_T,S_T),
+\]
+with \(C_P>C_C>C_T\) and \(S_P<S_C<S_T\), the two transition pressures are
+
+\[
+\lambda_{P\to C}=\frac{S_C-S_P}{C_P-C_C},
+\qquad
+\lambda_{C\to T}=\frac{S_T-S_C}{C_C-C_T}.
+\]
+
+The compromise occupies a nonempty interval precisely when
+
+\[
+\lambda_{P\to C}<\lambda_{C\to T}.
+\]
+
+This result is geometric and does not depend on the particular four-qubit construction. The quantum content enters through the definition of \(S_F\), for example the OQM Gaussian scrambling rate.
