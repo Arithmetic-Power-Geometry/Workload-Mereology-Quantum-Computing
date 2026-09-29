@@ -36,6 +36,9 @@ jobs:
       - name: Generate partition robustness artifacts
         run: python scripts/run_partition_experiments.py --out artifacts --samples 2000 --seed 2026
 
+      - name: Generate exhaustive scaling artifacts
+        run: python scripts/run_exhaustive_scaling.py --out artifacts --samples 500 --seed 2026
+
       - name: Upload artifact bundle
         uses: actions/upload-artifact@v4
         with:
