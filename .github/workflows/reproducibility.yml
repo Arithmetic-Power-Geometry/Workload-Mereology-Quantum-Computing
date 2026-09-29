@@ -48,6 +48,9 @@ jobs:
       - name: Generate dimensionless OQM controls
         run: python scripts/run_dimensionless_controls.py --out artifacts --samples 300 --seed 2028
 
+      - name: Generate noncommuting XYZ OQM controls
+        run: python scripts/run_noncommuting_controls.py --out artifacts --samples 300 --seed 2029
+
       - name: Upload artifact bundle
         uses: actions/upload-artifact@v4
         with:
