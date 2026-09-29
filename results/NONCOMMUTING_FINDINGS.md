@@ -29,13 +29,13 @@ The largest observed compromise fraction is:
 - lambda = 1
 - samples = 300
 - physical/task optimum conflict fraction = 0.990
-- physical endpoint selected = 0.2133333333
-- task endpoint selected = 0.2266666667
-- compromise factorization selected = 0.5600000000
+- physical endpoint selected = 0.2933333333
+- task endpoint selected = 0.1166666667
+- compromise factorization selected = 0.5900000000
 
-Thus 168 of 300 instances selected a factorization equal to neither endpoint optimum.
+Thus 177 of 300 instances selected a factorization equal to neither endpoint optimum.
 
-A Wilson 95% confidence interval for 168/300 is approximately [0.504, 0.615].
+A Wilson 95% confidence interval for 168/300 is approximately [0.534, 0.644].
 
 ## Interpretation
 
