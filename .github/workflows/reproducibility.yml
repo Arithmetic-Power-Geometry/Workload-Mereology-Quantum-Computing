@@ -54,6 +54,9 @@ jobs:
       - name: Build frozen paper-facing claims
         run: python scripts/build_paper_artifacts.py
 
+      - name: Build publication figures
+        run: python scripts/build_figures.py
+
       - name: Upload artifact bundle
         uses: actions/upload-artifact@v4
         with:
