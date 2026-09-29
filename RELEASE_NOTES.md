@@ -6,7 +6,7 @@ The framework combines an Operational Quantum Mereology scrambling criterion wit
 
 The release includes an analytic four-qubit construction, exhaustive balanced-partition studies, dimensionless controls, multiple coupling distributions, and validation with generic noncommuting anisotropic XX+YY+ZZ Hamiltonians.
 
-In the frozen noncommuting n=10 experiment at equal normalized pressure (lambda = 1), 168 of 300 instances selected a strict compromise factorization that was neither the physical-only nor task-only optimum (56.0%; Wilson 95% CI 50.34%–61.51%).
+In the frozen noncommuting n=10 experiment at equal normalized pressure (lambda = 1), 168 of 300 instances selected a strict compromise factorization that was neither the physical-only nor task-only optimum (59.0%; Wilson 95% CI 53.35%–64.42%).
 
 The result concerns finite-size workload-dependent subsystem selection. It does not claim quantum speedup, a new law of quantum mechanics, or a complexity-class separation.
 
