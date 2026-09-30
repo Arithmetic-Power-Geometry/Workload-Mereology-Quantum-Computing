@@ -1,52 +1,62 @@
 # Workload–Mereology Quantum Computing
 
-A reproducible research software project for studying **competition between physically natural quantum subsystem structure and workload-optimal computational subsystem structure**.
+A research software and reproducibility repository for **workload-dependent quantum subsystem selection**, where computational task locality competes with dynamical naturalness measured through quantum scrambling.
 
-The project tests a narrow hypothesis: a quantum processor may face a trade-off between **physical naturalness** (scrambling/interaction cost), **computational utility** (task cost), **error**, and **refactorization cost**.
+The framework studies candidate generalized tensor-product structures using the dimensionless objective
 
-It does **not** claim new quantum mechanics, computation beyond BQP, or a demonstrated quantum speedup.
+[
+J_\lambda(F)=\widehat S_{\mathrm{OQM}}(F)+\lambda\widehat C_T(F),
+]
 
-## Core objective
+where \(\widehat S_{\mathrm{OQM}}\) is normalized physical cost derived from the Gaussian scrambling criterion of Operational Quantum Mereology and \(\widehat C_T\) is normalized task cost.
 
-For factorization `F`,
+## Scientific scope
 
-`J(F) = r C_T(F) + alpha S(F) + beta E(F) + W(F_old,F)`.
+A physically natural factorization and a task-optimal factorization need not coincide. For a finite candidate family, workload-dependent optima are characterized geometrically by exposed points of the lower convex hull in physical-cost/task-cost space. A strict intermediate lower-hull vertex can therefore become uniquely optimal over a nonempty interval of workload pressure.
 
-For two candidates `F_a,F_b`, if `F_b` reduces task cost by `Delta C > 0`, the break-even reuse level is
+The repository contains:
 
-`r_c = (Delta W + alpha Delta S + beta Delta E) / Delta C`.
+- analytic four-qubit constructions;
+- lower-convex-envelope theory;
+- Operational Quantum Mereology scrambling calculations;
+- exhaustive balanced-bipartition experiments;
+- commuting Pauli-ZZ controls across multiple coupling distributions;
+- generic noncommuting anisotropic XX+YY+ZZ controls;
+- fixed-seed tests, experiment scripts, numerical summaries, and figure-generation code.
 
-## Four-qubit benchmark
+The framework does not modify quantum mechanics and does not claim quantum speedup, computation beyond BQP, or a complexity-class separation.
 
-Reference Hamiltonian:
+## Four-qubit construction
 
-`H = J (Z1 Z2 + Z3 Z4)`.
+For
 
-Candidates:
-- physical: `F_P = (12)|(34)`
-- workload: `F_C = (13)|(24)`
+[
+H=J(Z_1Z_2+Z_3Z_4),
+]
 
-For Heisenberg evolution of `X1`,
+consider the physical grouping \(F_P=(12)|(34)\) and workload grouping \(F_C=(13)|(24)\). Heisenberg evolution gives
 
-`X1(t) = X1 cos(2 J t) - Y1 Z2 sin(2 J t)`.
+[
+X_1(t)=X_1\cos(2Jt)-Y_1Z_2\sin(2Jt).
+]
 
-Relative to `F_P`, support stays within factor `(12)`; relative to `F_C`, the second term crosses factors. The benchmark uses
+Relative to \(F_P\), support remains within subsystem \((12)\); relative to \(F_C\), the second term crosses factors. With task costs 10 and 2, the corresponding transition condition can be written
 
-`S_P(t)=0`, `S_C(t)=sin^2(2 J t)`.
+[
+r_c(t)=\frac{W+\alpha\sin^2(2Jt)+\beta\Delta E}{8}.
+]
 
-With task costs 10 and 2,
+## Reproducible results
 
-`r_c(t) = [W + alpha sin^2(2 J t) + beta Delta E] / 8`.
+Under the dimensionless OQM objective, the \(n=10\), \(\lambda=1\) Pauli-ZZ experiments select a strict compromise factorization in **61.33%** of 300 instances for uniform couplings, **60.67%** for normal couplings, and **61.33%** for lognormal couplings.
 
-## Research scope
+For generic noncommuting anisotropic XX+YY+ZZ Hamiltonians at \(\lambda=1\), the strict-compromise fraction is **21.33%** at \(n=6\), **41.33%** at \(n=8\), and **59.00%** at \(n=10\). At \(n=10\), this corresponds to **177/300** instances; the physical-only and task-only optima differ in **99.0%** of instances.
 
-The software tests four questions: whether workload-optimal and dynamics-optimal factorizations differ; whether an intermediate compromise factorization emerges with three or more candidates; whether results survive established scrambling metrics; and whether benefits remain after all adaptation costs are charged.
+The OQM Gaussian-scrambling control reaches a **38.4%** compromise fraction at \(n=8\), zero physical/workload correlation, and workload pressure \(r=0.25\).
 
-## Prior-art boundary
+These are finite-size computational results for the tested ensembles; they do not establish an asymptotic scaling law.
 
-This repository does not claim novelty for generalized tensor-product structures, minimal-scrambling subsystem selection, mereological quantum phase transitions, quantum code switching, workload-aware qubit placement/routing, or adaptive quantum hardware. The candidate contribution is the **joint competition between workload cost and quantum subsystem naturalness**.
-
-## Run
+## Reproduction
 
 ```bash
 python -m pip install -r requirements.txt
@@ -55,28 +65,18 @@ python -m pytest -q
 python scripts/run_experiments.py --out artifacts
 ```
 
-GitHub Actions runs the tests and publishes the generated result bundle as a workflow artifact.
+GitHub Actions executes the reproducibility workflow and publishes the resulting numerical bundle as a workflow artifact.
+
+## Citation
+
+Akhtar, M. A. K. (2026). *Workload–Mereology Quantum Computing: When Computational Demand Changes the Preferred Quantum Subsystem Structure* (Version V1). Zenodo. https://doi.org/10.5281/zenodo.23053233
+
+DOI: https://doi.org/10.5281/zenodo.23053233
+
+Citation metadata are also provided in `CITATION.cff`.
 
 ## License
 
-Apache License 2.0.
+The research software is released under the Apache License 2.0.
 
 Copyright © 2026 Mohammad Amir Khusru Akhtar.
-
-
-## Current validated result
-
-The current reproducible benchmark includes commuting Pauli-ZZ and generic noncommuting anisotropic XX+YY+ZZ Hamiltonian ensembles. Under the dimensionless objective
-
-`J_lambda(F) = S_hat_OQM(F) + lambda C_hat_T(F)`,
-
-the noncommuting n=10 experiment selected a strict compromise factorization in 177/300 instances (59.0%) at lambda=1 (seed 2029). The physical and task-only optima differed in 99.0% of those instances. See `results/NONCOMMUTING_FINDINGS.md`.
-
-The result is a finite-size computational finding about workload-dependent subsystem selection. It is not a claim of quantum speedup, a new law of quantum mechanics, or a complexity-class separation.
-
-
-## Reproducible benchmark summary
-
-Under the dimensionless OQM objective, the n=10 Pauli-ZZ control at lambda=1 selects a strict compromise factorization in 61.33% of 300 instances for uniform and lognormal coupling ensembles and 60.67% for the normal ensemble. In the generic noncommuting anisotropic XX+YY+ZZ control, the strict-compromise fraction at lambda=1 is 21.33% for n=6, 41.33% for n=8, and 59.00% for n=10.
-
-These are finite-size reproducibility results from fixed-seed workflow artifacts. They do not establish an asymptotic scaling law, quantum speedup, or new quantum mechanics.
