@@ -1,50 +1,37 @@
 # OQM Gaussian-Scrambling Validation
 
-Reproducibility run: 36589754647  
-Artifact SHA-256: 33ec32066f859bd317021459171fe1273d99a07df6228959195b626d6c0b356f  
-Seed: 2026  
-Samples per parameter point: 500  
-Parameter points: 105  
-Total random instances: 52,500
-
 ## Criterion
 
-This experiment replaces the squared interaction-crossing surrogate by the Operational Quantum Mereology short-time Gaussian scrambling rate
+The physical-cost control uses the Operational Quantum Mereology short-time Gaussian scrambling rate
 
-tau_s^{-1} = D(H/sqrt(d), A + A').
+[
+\tau_s^{-1}=D(H/\sqrt d,\mathcal A+\mathcal A').
+]
 
-For the Pauli-ZZ Hamiltonian ensemble used here, orthogonality of Pauli strings gives
+For the Pauli-ZZ Hamiltonian ensemble, Hilbert-Schmidt orthogonality gives
 
-tau_s^{-1}(F) = sqrt(sum_cross J_ij^2).
+[
+\tau_s^{-1}(F)=\sqrt{\sum_{\mathrm{cross}}J_{ij}^2}.
+]
 
-The joint objective is
+The joint finite-size benchmark combines this physical cost with workload task cost.
 
-J(F) = tau_s^{-1}(F) + r C_T(F).
+## Validated result
 
-## Main result
+In the final OQM control reported with the research record, the largest observed strict-compromise fraction is **38.4%** at:
 
-The largest observed compromise fraction occurred at:
+- system size: n = 8
+- physical/workload correlation: 0.0
+- workload pressure: r = 0.25
 
-- n = 8
-- physical/workload correlation = 0.0
-- reuse r = 0.5
-- physical/task optimum conflict fraction = 0.968
-- physical endpoint selected = 0.266
-- task endpoint selected = 0.316
-- compromise partition selected = 0.418
-
-A compromise partition is a joint optimum equal to neither the OQM physical optimum nor the task-only optimum.
-
-## Comparison with the earlier squared-strength surrogate
-
-Earlier peak compromise fraction: 0.442.
-OQM Gaussian-rate peak compromise fraction: 0.418.
-Absolute peak reduction: 0.024.
-
-The location in r shifts because sqrt(sum J^2), rather than sum J^2, changes the relative scale of the physical term. The important qualitative result survives: an intermediate joint optimum is common in the n=8 independent-graph ensemble.
+A strict compromise is a joint optimum equal to neither the OQM physical-only optimum nor the task-only optimum.
 
 ## Interpretation
 
-This is evidence for robustness of the workload–mereology compromise under the published OQM short-time subsystem-selection criterion, specialized to Pauli-ZZ Hamiltonians.
+The result shows that the intermediate-factorization regime persists when physical cost is evaluated using the OQM Gaussian scrambling criterion rather than only a squared interaction-crossing surrogate.
 
-It is not evidence of quantum speedup, a new law of quantum mechanics, or a complexity-class separation. Further controls should vary Hamiltonian operator families, graph ensembles, normalization of task cost, and system size.
+This is a finite-size result for the tested random ensembles. It does not establish quantum speedup, a new law of quantum mechanics, a thermodynamic phase transition, an asymptotic scaling law, or a complexity-class separation.
+
+## Associated research record
+
+Akhtar, M. A. K. (2026). *Workload–Mereology Quantum Computing: When Computational Demand Changes the Preferred Quantum Subsystem Structure* (Version V1). Zenodo. https://doi.org/10.5281/zenodo.23053233
